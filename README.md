@@ -24,7 +24,7 @@ A real-time particle simulation built from scratch! Watch thousands of particles
 
 ## 🛠️ Built With
 
-- Language: C++ (or whichever you used)
+- Language: C++
 - Graphics Library: SFML
 
 ---
