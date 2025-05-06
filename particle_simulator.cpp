@@ -8,10 +8,7 @@
 
 using namespace std;
 
-// float TIME_STAMP = 0.08;
 float TIME_STAMP = 0.015;
-// int FRAME_RATE = 240;
-// int FRAME_RATE = 440;
 int FRAME_RATE = 2000;
 unsigned int WIDTH = 700;
 unsigned int HEIGHT = 600;
@@ -45,9 +42,6 @@ class Ball{
 
             vx += ax*TIME_STAMP;
             vy += ay*TIME_STAMP;
-
-            // vx *= 0.98f;
-            // vy *= 0.98f;
 
             x += vx * TIME_STAMP + 0.5*ax*TIME_STAMP*TIME_STAMP; 
             y += vy * TIME_STAMP + 0.5*ay*TIME_STAMP*TIME_STAMP; 
@@ -198,14 +192,9 @@ int main(){
     int a = 10*radius,b = HEIGHT/radius + 1,c = WIDTH/radius + 1;
 
     sf::Vector2i mousePos({-1,-1});
-    // Ball particles[2] = {Ball(100.f,100.f,radius,sf::Color::White),Ball(100.f,30.f,radius,sf::Color::White)};
     vector<Ball> particles = random_points(count,radius);
     
-
     window.clear(sf::Color::Black);
-    // window.setFramerateLimit(80);
-    // window.setFramerateLimit(FRAME_RATE);
-
 
     while (window.isOpen()){
         while (const std::optional event = window.pollEvent()){
@@ -239,7 +228,6 @@ int main(){
         }
         for (int i = 0;i<count;i++){
             for (int j = i+1;j<count;j++){
-            // for (int j = 0;j<count;j++){
                 if (i != j) particles[i].collide(&particles[j],E);
             }
         }
